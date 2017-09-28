@@ -1,13 +1,13 @@
 [package]
 name = "concat-string"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["FaultyRAM <explodingpsu@gmail.com>"]
 description = "Provides macros for concatenating string slices into owned strings."
 repository = "https://github.com/FaultyRAM/concat-string"
 readme = "README.md"
 keywords = ["concatenation"]
 categories = ["rust-patterns"]
-license = "(Apache-2.0 OR MIT)"
+license = "Apache-2.0 OR MIT"
 
 [badges.appveyor]
 repository = "FaultyRAM/concat-string"
