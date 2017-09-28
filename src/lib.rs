@@ -6,6 +6,22 @@
 // distributed except according to those terms.
 
 //! Macros for concatenating string slices into owned strings.
+//!
+//! This crate provides the `concat_string!` macro for efficiently concatenating string slices into
+//! owned strings. `concat_string!` accepts any number of arguments that implement `AsRef<str>` and
+//! creates a `String` with the appropriate capacity, without the need for format strings and their
+//! associated runtime overhead.
+//!
+//! # Example
+//!
+//! ```rust
+//! #[macro_use(concat_string)]
+//! extern crate concat_string;
+//!
+//! fn main() {
+//!     println!("{}", concat_string!("Hello", String::from(" "), "world"));
+//! }
+//! ```
 
 #![cfg_attr(feature = "clippy", feature(plugin))]
 #![cfg_attr(feature = "clippy", plugin(clippy))]
