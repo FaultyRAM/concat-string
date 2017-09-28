@@ -28,7 +28,7 @@ matrix:
 install:
   - SET PATH=%USERPROFILE%\.cargo\bin;%PATH%
   - IF DEFINED MSYS_BITS set C:\msys64\mingw%MSYS_BITS%\bin;PATH=%PATH%
-  - ps: Start-FileDownload "https://static.rust-lang.org/rustup/dist/$TARGET/rustup-init.exe"
+  - ps: Start-FileDownload "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe"
   - rustup-init.exe -y --no-modify-path --default-host %TARGET% --default-toolchain %CHANNEL%
   - rustup -vV
   - rustc -vV
