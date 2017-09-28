@@ -1,0 +1,29 @@
+[package]
+name = "concat-string"
+version = "0.1.0"
+authors = ["FaultyRAM <explodingpsu@gmail.com>"]
+description = "Provides macros for concatenating string slices into owned strings."
+repository = "https://github.com/FaultyRAM/concat-string"
+readme = "README.md"
+keywords = ["concatenation"]
+categories = ["rust-patterns"]
+license = "(Apache-2.0 OR MIT)"
+
+[badges.appveyor]
+repository = "FaultyRAM/concat-string"
+
+[badges.travis-ci]
+repository = "FaultyRAM/concat-string"
+
+[badges.is-it-maintained-issue-resolution]
+repository = "FaultyRAM/concat-string"
+
+[badges.is-it-maintained-open-issues]
+repository = "FaultyRAM/concat-string"
+
+[badges.maintenance]
+status = "actively-developed"
+
+[dependencies.clippy]
+version = "0.0"
+optional = true
