@@ -26,4 +26,5 @@ matrix:
       rust: stable
     - env: "FORMATTING=true"
       rust: beta
+before_install: chmod +x ./.travis-script.sh
 script: ./.travis-script.sh
