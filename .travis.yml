@@ -18,7 +18,7 @@ rust:
 matrix:
   allow_failures:
     - env: "FORMATTING=false"
-    - rust: nightly
+      rust: nightly
   exclude:
     - env: "FORMATTING=true"
       os: osx
