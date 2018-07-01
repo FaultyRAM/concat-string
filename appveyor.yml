@@ -7,33 +7,46 @@ environment:
   matrix:
     - TARGET: x86_64-pc-windows-gnu
       CHANNEL: stable
-      MSYS_BITS: 64
+      CARGO_CHECK: cargo check
+      CARGO_FMT: cargo fmt -- --write-mode diff
     - TARGET: x86_64-pc-windows-gnu
       CHANNEL: beta
-      MSYS_BITS: 64
+      CARGO_CHECK: cargo check
+      CARGO_FMT: cargo fmt -- --check
     - TARGET: x86_64-pc-windows-gnu
       CHANNEL: nightly
-      MSYS_BITS: 64
-      EXTRA_ARGS: --features "clippy"
+      CARGO_CHECK: cargo clippy && cargo clippy --tests
+      CARGO_FMT: cargo fmt -- --check
     - TARGET: x86_64-pc-windows-msvc
       CHANNEL: stable
+      CARGO_CHECK: cargo check
+      CARGO_FMT: cargo fmt -- --write-mode diff
     - TARGET: x86_64-pc-windows-msvc
       CHANNEL: beta
+      CARGO_CHECK: cargo check
+      CARGO_FMT: cargo fmt -- --check
     - TARGET: x86_64-pc-windows-msvc
       CHANNEL: nightly
-      EXTRA_ARGS: --features "clippy"
+      CARGO_CHECK: cargo clippy && cargo clippy --tests
+      CARGO_FMT: cargo fmt -- --check
 matrix:
   allow_failures:
+    - CHANNEL: beta
     - CHANNEL: nightly
 install:
   - SET PATH=%USERPROFILE%\.cargo\bin;%PATH%
-  - IF DEFINED MSYS_BITS set C:\msys64\mingw%MSYS_BITS%\bin;PATH=%PATH%
+  - IF "%TARGET%"=="x86_64-pc-windows-gnu" set PATH=C:\msys64\mingw64\bin;%PATH%
   - ps: Start-FileDownload "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe"
   - rustup-init.exe -y --no-modify-path --default-host %TARGET% --default-toolchain %CHANNEL%
   - rustup -vV
   - rustc -vV
   - cargo -vV
+  - rustup component add rustfmt-preview
+  - cargo fmt -v --version
+  - IF "%CHANNEL%"=="nightly" cargo install --git https://github.com/rust-lang-nursery/rust-clippy.git clippy && cargo clippy -V
 build_script:
-  - cargo build -vv --target=%TARGET% %EXTRA_ARGS%
+  - "%CARGO_FMT%"
+  - "%CARGO_CHECK%"
+  - cargo doc --target %TARGET%
 test_script:
-  - cargo test -vv --target=%TARGET% %EXTRA_ARGS%
+  - cargo test -vv --target=%TARGET%

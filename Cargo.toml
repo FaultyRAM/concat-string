@@ -23,7 +23,3 @@ repository = "FaultyRAM/concat-string"
 
 [badges.maintenance]
 status = "actively-developed"
-
-[dependencies.clippy]
-version = "0.0"
-optional = true
