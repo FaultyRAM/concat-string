@@ -1,6 +1,6 @@
 [package]
 name = "concat-string"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["FaultyRAM <explodingpsu@gmail.com>"]
 description = "Provides macros for concatenating string slices into owned strings."
 repository = "https://github.com/FaultyRAM/concat-string"
