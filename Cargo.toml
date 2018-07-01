@@ -8,18 +8,3 @@ readme = "README.md"
 keywords = ["concatenation"]
 categories = ["rust-patterns"]
 license = "Apache-2.0 OR MIT"
-
-[badges.appveyor]
-repository = "FaultyRAM/concat-string"
-
-[badges.travis-ci]
-repository = "FaultyRAM/concat-string"
-
-[badges.is-it-maintained-issue-resolution]
-repository = "FaultyRAM/concat-string"
-
-[badges.is-it-maintained-open-issues]
-repository = "FaultyRAM/concat-string"
-
-[badges.maintenance]
-status = "actively-developed"

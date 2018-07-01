@@ -1,7 +1,7 @@
 # concat-string
 
-[![Travis](https://img.shields.io/travis/FaultyRAM/concat-string.svg)][1]
-[![AppVeyor](https://img.shields.io/appveyor/ci/FaultyRAM/concat-string.svg)][2]
+[![Travis CI](https://travis-ci.org/FaultyRAM/concat-string.svg)][1]
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/ixrj2g0mve2augf2?retina=true&svg=true)][2]
 [![Crates.io](https://img.shields.io/crates/v/concat-string.svg)][3]
 [![Docs.rs](https://docs.rs/concat-string/badge.svg)][4]
 
